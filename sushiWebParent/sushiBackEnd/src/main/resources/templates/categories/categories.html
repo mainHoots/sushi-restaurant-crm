@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-<title>Home - Sushi Admin Control Panel</title>
+<title>Sushi Control Panel - Category List</title>
 <link rel="stylesheet" type="text/css"
 	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
 <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
@@ -36,10 +35,10 @@
 							<li class="nav-item"><a class="nav-link" th:href="@{/menu}">Menu</a>
 							</li>
 						</th:block>
-					<!-- 	<th:block sec:authorize="hasAnyAuthority('Admin', 'Assistant')">
+						<th:block sec:authorize="hasAnyAuthority('Admin', 'Assistant')">
 							<li class="nav-item"><a class="nav-link"
 								th:href="@{/categories}">Categories</a></li>
-						</th:block> -->
+						</th:block>
 						<th:block sec:authorize="hasAnyAuthority('Admin', 'Assistant')">
 							<li class="nav-item"><a class="nav-link"
 								th:href="@{/customers}">Customers</a></li>
@@ -64,56 +63,76 @@
 
 					</ul>
 				</div>
-			</nav>
+			</nav> 
 		</div>
 
 		<div>
-			<h1>Sushi Control Panel</h1>
-			Welcome <a th:href="@{/account}"
-				sec:authentication="principal.FullName"></a> <span
-				sec:authentication="principal.authorities"></span>
+			<h2>Manage Categories</h2>
+			<a th:href="@{/categories/new}" class="btn btn-primary" role="button">Create New Category</a>
+		</div>
+
+		<div th:if="${message != null}"
+			class="alert alert-success text-center">[[${message}]]</div>
+
+		 <div>
+			<form th:action="@{/categories/page/1}" class="form-inline m-4">
+				Filter:&nbsp;
+				<input type="search" name="keyword" th:value="${keyword}" class="form-control" required />
+				&nbsp;&nbsp;
+				<button type="submit" class="btn btn-primary">
+					Submit				
+				</button>
+				&nbsp;&nbsp;
+				<button type="button" class="btn btn-secondary" onclick="clearFilter()">
+				
+				</button>
+			</form>
+		</div>
+		
+		<div class="full-details">
+			<table class="table table-bordered table-striped table-hover table-responsive-xl">
+				<thead class="thead-dark">
+					<tr>
+						<th>ID</th>
+						<th>Category Name</th>
+						<th>Alias</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr th:each="categories : ${listCategories}">
+						<td>[[${categories.id}]]</td>
+						<td>[[${categories.name}]]</td>
+						<td>[[${categories.alias}]]</td>
+						<!-- <td>
+						
+						<a class="btn btn-info" th:href="@{'/users/edit/' + ${user.id}}" role="button">Edit</a>
+						<a class="btn btn-danger link-delete" th:href="@{'/users/delete/' + ${user.id}}" role="button" >Delete</a>
+						
+					    </td>-->
+						
+					</tr>
+				</tbody>
+
+			</table>
 		</div>
 
 	</div>
+
 	<script type="text/javascript">
+
+	$(document).ready(function() {
+	
+		$(".link-delete").on("click", function(e) {
 		
-		$(document).ready(function() {
+			e.preventDefault();
+			alert($(this).attr("href"));
 		
-			$("#logoutLink").on("click", function(e) {
-			
-				e.preventDefault();
-				document.logoutForm.submit();
-			
-			});		
-			
-			customizeDropDownMenu();
-						
 		});
-		
-		function customizeDropDownMenu() {
-		
-			$(".navbar .dropdown").hover(
-			
-			function() {
-			
-				$(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
-			
-			},
-			
-			function() {
-			
-				$(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp();
-			
-			});
-		
-			$(".dropdown > a").click(function() {
-			
-				location.href = this.href;
-				
-			});
-		
-		};
-		
-	</script>
+	
+	});
+
+</script>
+
 </body>
 </html>
