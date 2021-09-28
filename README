@@ -1,11 +1,9 @@
 *To access backend Admin Control Panel
 
-User Email
-__________
-sushi@gmail.com
+Run Unit Test for creating Admin user data to access control panel
+
+\sushiCRM\sushiWebParent\sushiBackEnd\src\test\java\com\sushiCRM\admin\user\UserRepositoryTests.java
+
+Registration Access is in progress.
 
 
-
-Password
-_________
-pizzaplz
