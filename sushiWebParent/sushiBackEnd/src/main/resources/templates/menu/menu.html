@@ -95,7 +95,7 @@
 		$(".link-delete").on("click", function(e) {
 		
 			e.preventDefault();
-			alert($(this).attr("href"));
+			showDeleteConfirmModal($(this), 'menu');
 		
 		});
 	

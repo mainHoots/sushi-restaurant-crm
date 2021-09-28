@@ -32,5 +32,19 @@ public class MenuService {
 		return repo.save(menu);
 		
 	}
+	
+	public void delete(Integer id) throws MenuNotFoundException {
+		
+		Long countById = repo.countById(id);
+		
+		if (countById == null || countById == 0) {
+			
+			throw new MenuNotFoundException("Could not find Menu Item with ID# " + id);
+			
+		}
+		
+		repo.deleteById(id);
+		
+	}
 
 }
