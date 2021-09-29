@@ -1,19 +1,8 @@
 *To access backend Admin Control Panel
 
-Run Unit Test for creating Admin user data to access control panel
+Run Unit Test, "testCreateUserWithOneRole", for creating Admin user data to access control panel
 
 \sushiCRM\sushiWebParent\sushiBackEnd\src\test\java\com\sushiCRM\admin\user\UserRepositoryTests.java
 
-Default Backend Login Access
-____________________________
 
-User Email
-__________
-
-def@sushi.com
-
-Password
-________
-
-pizzaplz
 
