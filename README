@@ -4,5 +4,19 @@ Run Unit Test, "testCreateUserWithOneRole", for creating Admin user data to acce
 
 \sushiCRM\sushiWebParent\sushiBackEnd\src\test\java\com\sushiCRM\admin\user\UserRepositoryTests.java
 
+User Email and Password info after running, "testCreateUsersWithOneRole", Unit Test
+
+User Email
+__________
+
+def@sushi.com
+
+Password
+________
+
+pizzaplz
+
+
+
 
 
