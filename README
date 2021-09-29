@@ -4,6 +4,16 @@ Run Unit Test for creating Admin user data to access control panel
 
 \sushiCRM\sushiWebParent\sushiBackEnd\src\test\java\com\sushiCRM\admin\user\UserRepositoryTests.java
 
-Registration Access is in progress.
+Default Backend Login Access
+____________________________
 
+User Email
+__________
+
+def@sushi.com
+
+Password
+________
+
+pizzaplz
 
