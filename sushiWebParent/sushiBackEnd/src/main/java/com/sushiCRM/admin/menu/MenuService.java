@@ -2,6 +2,7 @@ package com.sushiCRM.admin.menu;
 
 import java.util.Date;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -47,9 +48,18 @@ public class MenuService {
 		
 	}
 
-	public Menu get(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Menu get(Integer id) throws MenuNotFoundException {
+		
+		try {
+			
+			return repo.findById(id).get();
+			
+		} catch (NoSuchElementException ex) {
+			
+			throw new MenuNotFoundException("Could not find the product with ID " + id);
+			
+		}
+		
 	}
 
 }

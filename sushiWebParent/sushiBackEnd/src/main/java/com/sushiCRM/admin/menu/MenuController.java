@@ -82,19 +82,28 @@ public class MenuController {
 		
 	}
 	 
-	/*
-	 * @GetMapping("/menu/edit/{id}") public String editMenu(@PathVariable("id")
-	 * Integer id, Model model, RedirectAttributes redirectAttributes) {
-	 * 
-	 * try {
-	 * 
-	 * Menu menu = menuService.get(id);
-	 * 
-	 * 
-	 * }
-	 * 
-	 * }
-	 */
+	
+	 @GetMapping("/menu/edit/{id}") 
+	 public String editMenu(@PathVariable("id") Integer id, Model model, RedirectAttributes redirectAttributes) {
+	  
+		 try {
+			Menu menu = menuService.get(id);
+			
+			model.addAttribute("menu", menu);
+			model.addAttribute("pageTitle", "Edit Menu Item (ID: " + id + ")");
+			
+			return "menu/menu_form";
+			
+		} catch (MenuNotFoundException e) {
+			
+			redirectAttributes.addFlashAttribute("message", e.getMessage());
+			
+			return "redirect:/menu";
+			
+		}
+	 
+	 }
+	 
 	 
 	/*
 	 * @GetMapping("/menu/detail/{id}") public String
