@@ -47,4 +47,9 @@ public class MenuService {
 		
 	}
 
+	public Menu get(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

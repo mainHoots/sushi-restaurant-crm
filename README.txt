@@ -1,4 +1,18 @@
-*To access backend Admin Control Panel
+*To access backend Admin Control Panel please import sushidbDump to MySQL and use login info below:
+
+User Email
+__________
+
+sushi@gmail.com
+
+Password
+________
+
+pizzaplease
+
+------------------------------------------------------------------------------------------------------------------
+
+**Another method to access backend Admin Control Panel
 
 Run Unit Test, "testCreateUserWithOneRole", for creating Admin user data to access control panel
 
@@ -15,6 +29,8 @@ Password
 ________
 
 pizzaplz
+
+
 
 
 

@@ -92,4 +92,20 @@ public class MenuRepositoryTests {
 		
 	}
 	
+	@Test
+	public void testSaveMenuItemDetail() {
+		
+		Integer menuId = 3;
+		
+		Menu menu = repo.findById(menuId).get();
+		
+		menu.addDetail("Red Dragon Roll", "Asparagus, Avocado, Kanikama, Spicy Tuna Topping with Tempura Crunch");
+		menu.addDetail("Spicy", "Yes");
+		menu.addDetail("Raw Fish Present", "No");
+		
+		Menu savedMenu = repo.save(menu);
+		assertThat(savedMenu.getDetails()).isNotEmpty();
+		
+	}
+	
 }

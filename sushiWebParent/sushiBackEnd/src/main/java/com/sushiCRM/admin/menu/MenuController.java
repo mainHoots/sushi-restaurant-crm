@@ -80,6 +80,30 @@ public class MenuController {
 		MenuCsvExporter exporter = new MenuCsvExporter();
 		exporter.export(listMenu, response);
 		
-	} 
+	}
+	 
+	/*
+	 * @GetMapping("/menu/edit/{id}") public String editMenu(@PathVariable("id")
+	 * Integer id, Model model, RedirectAttributes redirectAttributes) {
+	 * 
+	 * try {
+	 * 
+	 * Menu menu = menuService.get(id);
+	 * 
+	 * 
+	 * }
+	 * 
+	 * }
+	 */
+	 
+	/*
+	 * @GetMapping("/menu/detail/{id}") public String
+	 * viewMenuItemDetail(@PathVariable("id") Integer id, Model model,
+	 * RedirectAttributes redirectAttributes) {
+	 * 
+	 * 
+	 * 
+	 * }
+	 */
 
 }

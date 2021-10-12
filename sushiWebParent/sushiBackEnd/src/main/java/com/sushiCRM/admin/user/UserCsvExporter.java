@@ -30,7 +30,7 @@ public class UserCsvExporter {
 		
 		ICsvBeanWriter csvWriter = new CsvBeanWriter(response.getWriter(), CsvPreference.STANDARD_PREFERENCE);
 		
-		String[] csvHeader = {"User ID", "First Name", "Last Name", "Roles", "Enabled"};
+		String[] csvHeader = {"User ID", "Username", "First Name", "Last Name", "Roles", "Enabled"};
 		
 		String[] fieldMapping = {"id", "email", "firstName", "lastName", "roles", "enabled"};
 		
