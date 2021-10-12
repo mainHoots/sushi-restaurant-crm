@@ -48,18 +48,20 @@ public class MenuService {
 		
 	}
 
-	public Menu get(Integer id) throws MenuNotFoundException {
-		
-		try {
-			
-			return repo.findById(id).get();
-			
-		} catch (NoSuchElementException ex) {
-			
-			throw new MenuNotFoundException("Could not find the product with ID " + id);
-			
-		}
-		
-	}
+	/*
+	 * public Menu get(Integer id) throws MenuNotFoundException {
+	 * 
+	 * try {
+	 * 
+	 * return repo.findById(id).get();
+	 * 
+	 * } catch (NoSuchElementException ex) {
+	 * 
+	 * throw new MenuNotFoundException("Could not find the product with ID " + id);
+	 * 
+	 * }
+	 * 
+	 * }
+	 */
 
 }

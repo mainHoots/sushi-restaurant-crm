@@ -61,6 +61,8 @@
 					
 					<th>Menu Item Name</th>
 					
+					<th>Price</th>
+					
 					<th>Active Status</th>
 					<th></th>
 				</tr>
@@ -70,6 +72,7 @@
 				<tr th:each="menu : ${listMenu}">
 					<td>[[${menu.id}]]</td>
 					<td>[[${menu.name}]]</td>
+					<td>[[${menu.price}]]</td>
 					<td>[[${menu.enabled}]]</td>
 					<td>
 						
